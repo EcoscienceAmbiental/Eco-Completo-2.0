@@ -3,87 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecoscience - Impacto</title>
-    <link rel="shortcut icon" href="favicon-16x16.png" type="image/png">
-    <link rel="stylesheet" href="cont.css">
+    <title>Coletor Ecológico - Desafio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Header Ecoscience */
+        * { margin: 0; box-sizing: border-box; }
+        a { font-weight: 700; font-size: 18px; color: hsl(0, 0%, 100%); font-family: "Roboto Condensed", sans-serif; text-decoration: none; }
+        .hd { color: white; transition: all 0.2s ease-in-out; }
+        .hd:hover { border-bottom: solid 3px #ffffff; }
+
+        #navheader { position: fixed; width: 100%; top: 0; left: 0; padding: 10px 0; background-color: #005d6d; z-index: 1000; }
+        #navhead { display: flex; justify-content: space-evenly; align-items: center; padding: 8px 4px; }
+        #navhead img { width: 160px; }
+        #navhead a { transition: linear 0.08s; }
+
+        @media (max-width: 768px) {
+            #navhead { flex-direction: column; gap: 10px; padding: 15px; }
+            #navhead img { width: 120px; }
+            .hd { display: none; }
+        }
+
+        /* Jogo */
+        body {
+            font-family: 'Inter', sans-serif;
+            touch-action: none; 
+            background-color: #f3f4f6;
+            background-image: linear-gradient(to bottom, #e0f2fe, #f3f4f6);
+            padding-top: 80px; /* espaço para o header fixo */
+        }
+
+        canvas {
+            background-color: #f0fdf4;
+            border-radius: 0.5rem;
+            border: 2px solid #22c55e;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(45deg, #16a34a, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .game-button {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0, 0.1);
+            border-bottom: 4px solid #15803d;
+        }
+
+        .game-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .game-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom-width: 2px;
+        }
+
+        .game-modal { animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        #levelUpModal h2 { animation: levelUpAnimation 1.5s ease-out forwards; }
+        @keyframes levelUpAnimation { 0% { transform: scale(0.5); opacity: 0; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+    </style>
 </head>
-<body>
+<body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen p-4">
+
+    <!-- Header Ecoscience -->
     <header>
         <nav id="navheader">
             <section id="navhead">
-                <a href="index.html"><img src="ecoscience69.png" alt="Logo Ecoscience" width="160"></a>
-                <a class="hd" href="calculadora.html">Calculadora de carbono</a>
-                <a class="hd" href="cont.html">Coletor Ecológico</a>
-                <a class="hd" href="ecochat.html">EcoChat</a>
+               <a href="index.html"><img src="ecoscience69.png" alt="Logo Ecoscience"></a>
+               <a class="hd" href="calculadora.html">Calculadora de carbono</a>
+               <a class="hd" href="cont.html">Impacto do projeto</a>
+               <a class="hd" href="ecochat.html">EcoChat</a>
             </section>
         </nav>
     </header>
 
-    <main class="conteudo-principal">
-        <section class="secao">
-            <h1>Nosso Impacto no Meio Ambiente</h1>
-            <p>
-                O Ecoscience nasceu com a missão de informar, conscientizar e ajudar pessoas a entenderem e reduzirem sua pegada ambiental. Acreditamos que pequenas atitudes podem gerar grandes mudanças. Por isso, disponibilizamos ferramentas como a <strong>Calculadora de Carbono</strong> e o <strong>EcoBot</strong> para orientar escolhas mais sustentáveis.
-            </p>
+    <div class="w-full max-w-2xl mx-auto mt-6">
+        <header class="text-center mb-4">
+            <h1 class="text-4xl font-bold text-gradient">Coletor Ecológico</h1>
+            <p class="text-gray-700 mt-2">Pegue os recicláveis e evite o lixo para limpar o planeta!</p>
+        </header>
 
-            <img src="pegada.jpg" alt="Pegada de carbono" class="img-poluicao">
-
-            <h2>Calculadora de Carbono</h2>
-            <p>
-                A <strong>Calculadora de Carbono</strong> do Ecoscience permite que você descubra o quanto suas atividades diárias impactam o planeta. Com base em dados sobre transporte, alimentação, energia e consumo, ela estima sua emissão de CO₂ e oferece sugestões práticas para reduzir esse valor. Ao entender sua pegada ecológica, você pode adotar hábitos mais conscientes e contribuir para frear as mudanças climáticas.
-            </p>
-
-            <img src="ecobot.jpg" alt="EcoBot assistente virtual" class="img-poluicao">
-
-            <h2>EcoBot - Seu Assistente Ambiental</h2>
-            <p>
-                O <strong>EcoBot</strong> é um assistente virtual pronto para tirar dúvidas, dar dicas de sustentabilidade e ensinar práticas ecológicas de forma simples e rápida. Ele foi projetado para ser um aliado no seu dia a dia, respondendo perguntas sobre reciclagem, consumo consciente, energia limpa e muito mais. A interação com o EcoBot facilita o aprendizado e incentiva mudanças positivas no comportamento ambiental.
-            </p>
-
-            <img src="atitude.jpg" alt="Atitudes sustentáveis" class="img-poluicao">
-
-            <h2>Juntos por um Futuro Sustentável</h2>
-            <p>
-                Cada passo conta! Seja plantando uma árvore, optando por transporte coletivo, reduzindo o uso de plásticos ou aprendendo com o EcoBot, suas ações têm um impacto. O Ecoscience é mais que um site, é uma comunidade voltada à transformação ambiental. Com informação acessível e ferramentas úteis, acreditamos que todos podem ser parte da solução.
-            </p>
-        </section>
-    </main>
-
-   <footer class="novo-footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <img src="ecoscience69.png" alt="Logo Ecoscience" class="footer-logo">
+        <!-- Container do Jogo -->
+        <div id="game-container" class="relative w-full aspect-[4/3] max-h-[600px] shadow-lg rounded-lg">
+            <canvas id="gameCanvas"></canvas>
+            
+            <!-- Tela Inicial / Game Over -->
+            <div id="modal" class="game-modal absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white p-4 sm:p-8 rounded-lg">
+                <h2 id="modal-title" class="text-3xl sm:text-4xl font-bold mb-4 text-center">Bem-vindo!</h2>
+                <p id="modal-text" class="text-base sm:text-lg text-center mb-6">Mova o coletor com as setas do teclado ou arrastando na tela para pegar os itens recicláveis. Cuidado com o lixo!</p>
+                <p id="final-score" class="text-xl sm:text-2xl font-semibold mb-6 hidden"></p>
+                <button id="startButton" class="game-button bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg sm:text-xl">
+                    Jogar
+                </button>
             </div>
-      
-            <div class="footer-col">
-                <h3>Explorar</h3>
-                <a href="cont.html">Impacto</a>
-                <a href="polu.html">Poluição</a>
-                <a href="ener.html">Energias renováveis</a>
+            
+            <!-- Modal de Level Up -->
+            <div id="levelUpModal" class="hidden absolute inset-0 bg-black bg-opacity-50 flex-col items-center justify-center text-white p-8 rounded-lg z-20">
+                <h2 id="levelUpText" class="text-5xl font-bold text-yellow-300"></h2>
             </div>
-      
-            <div class="footer-col">
-                <h3>Interaja</h3>
-                <a class="footer-btn" href="ecochat.html"> Ecochat</a>
-                <a class="footer-btn" href="calculadora.html">Calculadora de Carbono</a>
+        </div>
+
+        <!-- Informações do Jogo -->
+        <div class="flex justify-around items-center mt-4 p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+            <div class="flex items-center space-x-2 text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <span id="score" class="font-bold text-green-600">0</span>
             </div>
-      
-            <div class="footer-col">
-                <h3>Contato</h3>
-                <a class="footer-btn" href="#">📨 Contato</a>
+            <div class="flex items-center space-x-2 text-lg">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" /></svg>
+                <span id="level" class="font-bold text-blue-600">1</span>
+            </div>
+            <div class="flex items-center space-x-2 text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                <span id="lives" class="font-bold text-red-500">3</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Configurações Iniciais ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const gameContainer = document.getElementById('game-container');
+
+        const scoreEl = document.getElementById('score');
+        const livesEl = document.getElementById('lives');
+        const levelEl = document.getElementById('level');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const finalScoreEl = document.getElementById('final-score');
+        const startButton = document.getElementById('startButton');
+        const levelUpModal = document.getElementById('levelUpModal');
+        const levelUpText = document.getElementById('levelUpText');
+
+        let score = 0;
+        let lives = 3;
+        let gameOver = true;
+        let isPaused = false; // Controla a pausa para o level up
+        let gameLoop;
+        let currentLevel = 1;
+        let lastSpawn = -1;
+
+        // --- Configuração dos Níveis ---
+        const levels = [
+            { scoreThreshold: 0,   itemSpeed: 2.5, spawnInterval: 900, trashChance: 0.33 },
+            { scoreThreshold: 100, itemSpeed: 3.5, spawnInterval: 800, trashChance: 0.35 },
+            { scoreThreshold: 250, itemSpeed: 4.5, spawnInterval: 700, trashChance: 0.40 },
+            { scoreThreshold: 500, itemSpeed: 5.0, spawnInterval: 600, trashChance: 0.45 },
+            { scoreThreshold: 800, itemSpeed: 5.5, spawnInterval: 500, trashChance: 0.50 },
+            { scoreThreshold: 1200,itemSpeed: 6.0, spawnInterval: 400, trashChance: 0.55 },
+        ];
+
+        // --- Objetos do Jogo ---
+        const player = { width: 80, height: 20, x: 0, y: 0, speed: 15, dx: 0 };
+        const items = [];
+        const itemTypes = {
+            recyclable: { emojis: ['♻️', '📄', '🍾', '🥫', '📦'], points: 10 },
+            trash: { emojis: ['☠️', '🗑️', '☣️', '🚬'], points: -1 }
+        };
+
+        // --- Funções de Redimensionamento e Desenho ---
+        function resizeCanvas() {
+            canvas.width = gameContainer.clientWidth;
+            canvas.height = gameContainer.clientHeight;
+            player.width = canvas.width / 10;
+            player.height = canvas.height / 25; // Cesta um pouco mais alta
+            player.x = (canvas.width - player.width) / 2;
+            player.y = canvas.height - (player.height * 1.5); // Mais perto do fundo
+            player.speed = canvas.width / 30; // VELOCIDADE AUMENTADA AQUI
+            if (!gameOver) draw();
+        }
+        window.addEventListener('resize', resizeCanvas);
         
-            </div>
-        </div>
-      
-        <div class="footer-bottom">
-          <p>&copy; 2025 Ecoscience - Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
-</html>
+        function drawPlayer() {
+            const cornerRadius = 8;
+            ctx.fillStyle = '#16a34a'; // Corpo da cesta
+            ctx.beginPath();
+            ctx.roundRect(player.x, player.y, player.width, player.height, cornerRadius);
+            ctx.fill();
+            ctx.fillStyle = '#22c55e'; // Borda da cesta
+            ctx.beginPath();
+            ctx.roundRect(player.x - 2, player.y, player.width + 4, player.height / 2.5, [cornerRadius, cornerRadius, 0, 0]);
+            ctx.fill();
+        }
 
+        function drawItems() {
+            const itemSize = canvas.width / 20;
+            ctx.font = `${itemSize}px Arial`;
+            items.forEach(item => ctx.fillText(item.emoji, item.x, item.y));
+        }
+        
+        function drawBackground() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const grassHeight = 15;
+            ctx.fillStyle = '#16a34a';
+            ctx.fillRect(0, canvas.height - grassHeight, canvas.width, grassHeight);
+        }
 
+        function draw() {
+            drawBackground();
+            drawPlayer();
+            drawItems();
+        }
 
+        // --- Lógica do Jogo ---
+        function createItem() {
+            const currentSettings = levels[currentLevel - 1];
+            const isRecyclable = Math.random() > currentSettings.trashChance;
+            const type = isRecyclable ? 'recyclable' : 'trash';
+            const typeInfo = itemTypes[type];
+            const emoji = typeInfo.emojis[Math.floor(Math.random() * typeInfo.emojis.length)];
+            items.push({
+                x: Math.random() * (canvas.width - 30), y: 0, emoji, type, points: typeInfo.points
+            });
+        }
+
+        function updateItems() {
+            const currentSpeed = levels[currentLevel - 1].itemSpeed;
+            for (let i = items.length - 1; i >= 0; i--) {
+                const item = items[i];
+                item.y += currentSpeed;
+                if (item.y > player.y - 30 && item.y < player.y + player.height && item.x + 15 > player.x && item.x < player.x + player.width) {
+                    if (item.type === 'recyclable') score += item.points;
+                    else lives--;
+                    items.splice(i, 1);
+                    updateUI();
+                } else if (item.y > canvas.height) {
+                    if (item.type === 'recyclable') lives--;
+                    items.splice(i, 1);
+                    updateUI();
+                }
+            }
+        }
+        
+        function movePlayer() {
+            player.x += player.dx;
+            if (player.x < 0) player.x = 0;
+            if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+        }
+
+        function updateUI() {
+            scoreEl.textContent = score;
+            levelEl.textContent = currentLevel;
+            livesEl.textContent = '❤️'.repeat(Math.max(0, lives));
+        }
+
+        function showLevelUpNotification(newLevel) {
+            isPaused = true;
+            levelUpText.textContent = `Nível ${newLevel}!`;
+            levelUpModal.style.display = 'flex';
+            setTimeout(() => {
+                levelUpModal.style.display = 'none';
+                isPaused = false;
+            }, 1500); // Pausa de 1.5 segundos
+        }
+
+        function checkLevelUp() {
+            const nextLevelIndex = currentLevel;
+            if (nextLevelIndex < levels.length && score >= levels[nextLevelIndex].scoreThreshold) {
+                currentLevel++;
+                updateUI();
+                showLevelUpNotification(currentLevel);
+            }
+        }
+        
+        function checkGameOver() {
+            if (lives <= 0) {
+                gameOver = true;
+                cancelAnimationFrame(gameLoop);
+                modalTitle.textContent = 'Fim de Jogo!';
+                modalText.textContent = 'Obrigado por ajudar o planeta. Cada pequena ação faz a diferença!';
+                finalScoreEl.textContent = `Pontuação Final: ${score}`;
+                finalScoreEl.classList.remove('hidden');
+                startButton.textContent = 'Jogar Novamente';
+                modal.style.display = 'flex';
+            }
+        }
+
+        // --- Loop Principal ---
+        function loop(timestamp) {
+            if (gameOver || isPaused) {
+                gameLoop = requestAnimationFrame(loop);
+                return;
+            }
+            
+            if (timestamp - lastSpawn > levels[currentLevel - 1].spawnInterval) {
+                lastSpawn = timestamp;
+                createItem();
+            }
+            
+            movePlayer();
+            updateItems();
+            draw();
+            checkLevelUp();
+            checkGameOver();
+            gameLoop = requestAnimationFrame(loop);
+        }
+
+        // --- Controles ---
+        function handleKeyDown(e) {
+            if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') player.dx = player.speed;
+            else if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') player.dx = -player.speed;
+        }
+        function handleKeyUp(e) {
+            if (['arrowright', 'd', 'arrowleft', 'a'].includes(e.key.toLowerCase())) player.dx = 0;
+        }
+        let touchX = null;
+        function handleTouchStart(e) { if (e.touches) touchX = e.touches[0].clientX; }
+        function handleTouchMove(e) {
+            if (touchX === null) return;
+            player.x += e.touches[0].clientX - touchX;
+            touchX = e.touches[0].clientX;
+            e.preventDefault();
+        }
+        function handleTouchEnd() { touchX = null; }
+
+        // --- Iniciar o Jogo ---
+        function startGame() {
+            score = 0;
+            lives = 3;
+            items.length = 0;
+            currentLevel = 1;
+            gameOver = false;
+            isPaused = false;
+            
+            resizeCanvas();
+            updateUI();
+            modal.style.display = 'none';
+            finalScoreEl.classList.add('hidden');
+            
+            cancelAnimationFrame(gameLoop); // Garante que o loop anterior pare
+            gameLoop = requestAnimationFrame(loop);
+        }
+        
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('keyup', handleKeyUp);
+        canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+        canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+        canvas.addEventListener('touchend', handleTouchEnd);
+        startButton.addEventListener('click', startGame);
+
+        resizeCanvas();
+    </script>
 </body>
 </html>
-
