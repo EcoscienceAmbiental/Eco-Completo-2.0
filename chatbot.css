@@ -15,10 +15,6 @@ body{
     margin: 0 !important;
     
 }
-h1{
-    color: white;
-    font-family: 'Roboto Condensed', sans-serif
-}
 
 #main{
     position: relative;
@@ -62,3 +58,4 @@ a {
         display: none;
     }
 }    
+
