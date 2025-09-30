@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Carbono</title>
+    <!-- Inclui o Tailwind CSS para um estilo moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inclui a fonte Inter do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="stylecalc.css">
+
+</head>
+<body >
+
+    <header>
+            <nav id="navheader">
+                <section id="navhead">
+                   <a href="index.html"><img src="ecoscience69.png" alt="Logo Ecoscience" width="160"></a>
+            <a class="hd" href="calculadora.html">Calculadora de carbono</a>
+            <a class="hd" href="cont.html">Impacto do projeto</a>
+            <a class="hd" href="ecochat.html">EcoChat</a>
+                </section>
+            </nav>
+    </header>
+
+    <div class="body2">
+        <div><a href="{% url 'home' %}"><img src="{% static 'img/logo_azul.png' %}" alt="" width="140"></a></div>
+        <div class="bg-slate-50 flex items-center justify-center min-h-screen p-2">
+            <div class="relative w-full max-w-xl">
+        
+                <div id="progress-bar-container" class="w-full h-2 bg-slate-200 rounded-full mb-2 ">
+                    <div id="progress-bar" class="h-2 bg-blue-500 rounded-full transition-all duration-500 ease-in-out" style="width: 0%;"></div>
+                </div>
+        
+                <div id="loading-spinner" class="bg-white p-8 rounded-3xl shadow-2xl flex flex-col items-center justify-center min-h-[400px] hidden">
+                    <h2 class="text-3x1 md:text-3xl font-bold text-center text-slate-800 mb-2">Calculando sua pegada de carbono...</h2>
+                    <div class="loader"></div>
+                </div>
+                <div id="question-card" class="bg-white p-8 rounded-3xl shadow-2xl flex flex-col justify-between min-h-[400px]">
+                    </div>
+                <div class="mt-8 flex justify-between gap-4">
+                    <button id="back-button" class="flex-1 bg-slate-300 text-slate-800 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-slate-400 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Anterior
+                    </button>
+                    <button id="next-button" class="flex-1 bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Próximo
+                    </button>
+                </div>
+            </div>
+        
+            <script src="scriptcalc.js"></script>
+        </div>
+    </div>
+
+</body>
+</html>
