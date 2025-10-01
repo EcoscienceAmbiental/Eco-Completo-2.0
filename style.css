@@ -55,6 +55,10 @@ a {
     display: none;    }
 }
 
+.cards{
+    height:200px;
+}
+
 #navheader {
     position: fixed;
     width: 100%;
@@ -400,4 +404,5 @@ body p {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+
 }
