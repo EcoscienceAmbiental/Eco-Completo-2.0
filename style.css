@@ -263,7 +263,7 @@ body p {
     }
 
     .cards {
-        height: 400px;
+        height: 350px;
         align-items: center;
         margin-left: 10px;
         text-align: center;
@@ -306,7 +306,7 @@ body p {
 
 @media (max-width: 640px) {
     .cards {
-        height: 270px;
+        height: 200px;
     }
 }
 
@@ -406,3 +406,4 @@ body p {
     gap: 20px;
 
 }
+
