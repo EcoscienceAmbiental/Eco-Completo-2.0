@@ -59,6 +59,10 @@ a {
     height:200px;
 }
 
+.imgcards{
+        
+}
+
 #navheader {
     position: fixed;
     width: 100%;
@@ -168,6 +172,8 @@ a {
 }
 
 .cards {
+    justify-content:center;
+    align-itens: center;
     overflow: hidden;
     border-radius: 10px;
     width: 28%;
@@ -406,4 +412,5 @@ body p {
     gap: 20px;
 
 }
+
 
