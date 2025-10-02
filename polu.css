@@ -39,9 +39,8 @@ header {
 
 a {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
     font-family: "Roboto Condensed", sans-serif;
-    font-size: 22px;
     color: #ffffff;
     text-decoration: none;
     transition: linear 0.1s;
@@ -211,4 +210,5 @@ main.conteudo-principal {
     text-align: center;
     padding: 15px;
     font-size: 14px;
+
   }
