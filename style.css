@@ -179,7 +179,7 @@ a {
 
 
 .acards img {
-    justify-itens:center;
+    justify-contents:center;
     text-align: center;
     height: 100%;
     border-radius: 0px 10px 0px 0px;
@@ -403,6 +403,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
