@@ -33,7 +33,7 @@ header {
     justify-content: space-evenly;
     display: flex;
     border-bottom: solid 2px #0097B2;
-    height: 90px;
+    height: 55px;
    
 }
 
@@ -212,3 +212,4 @@ main.conteudo-principal {
     font-size: 14px;
 
   }
+
