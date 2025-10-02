@@ -40,12 +40,27 @@ a {
     transition: linear 0.08s;
 }
 
+@media(max-width:1920px){
+    width:140%;
+}
+
+@media (max-width: 1024px) {
+
+    .box{
+        width:125%;
+    }
+}
+
 @media (max-width: 768px) {
     #navhead {
         flex-direction: column;
         height: auto;
         gap: 10px;
         padding: 15px;
+    }
+
+    .box{
+        width: 35%;
     }
 
     #navhead img {
@@ -209,7 +224,7 @@ body p {
     margin: 20px 100px 20px 100px;
     text-indent: 15px;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 .assuntos {
@@ -279,7 +294,7 @@ body p {
     }
 
     .box{
-        width: 60%;
+        width: 50%;
     }
 
     #intr2{
@@ -304,6 +319,10 @@ body p {
 @media (max-width: 640px) {
     .cards {
         height: 200px;
+    }
+
+    .box{
+        width: 30%
     }
 }
 
@@ -403,6 +422,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
