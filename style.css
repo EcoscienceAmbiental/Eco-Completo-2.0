@@ -189,6 +189,7 @@ a {
     font-family: "Roboto Condensed", sans-serif;
     border: 0px;
     margin: 1px 0px 1px 2%;
+    text-align:center;
 }
 
 body h1 {
@@ -402,6 +403,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
