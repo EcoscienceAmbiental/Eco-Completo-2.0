@@ -172,6 +172,7 @@ a {
 }
 
 .cards {
+    display:flex;
     justify-content:center;
     overflow: hidden;
     border-radius: 10px;
@@ -411,6 +412,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
