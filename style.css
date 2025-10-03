@@ -277,16 +277,12 @@ body p {
     }
 
     .cards {
-        height: 400px;
+        height: 300px;
         align-items: center;
         margin-left: 10px;
         text-align: center;
         margin-bottom: 20px;
         width: 55%;
-    }
-
-    .cards:hover {
-        width: 65%;
     }
 
     .cards{
@@ -320,7 +316,7 @@ body p {
 
 @media (max-width: 640px) {
     .cards {
-        height: 270px;
+        height: 250px;
     }
 }
 
@@ -419,5 +415,6 @@ body p {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 
 
