@@ -192,6 +192,7 @@ a {
 
 
 .acards img {
+    justify-content:center;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
@@ -419,3 +420,4 @@ body p {
     flex-wrap: wrap;
     gap: 20px;
 }
+
