@@ -42,14 +42,14 @@ a {
 
 @media(max-width:1920px){
     box{
-        height:135%
+        height:350px;
     }
 }
 
 @media (max-width: 1024px) {
 
     .box{
-        height:125%;
+        height:300px;
     }
 }
 
@@ -63,7 +63,7 @@ a {
 
     .box{
         width: 40%;
-        height:50%;
+        height:100px;
     }
 
     #navhead img {
@@ -427,6 +427,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
