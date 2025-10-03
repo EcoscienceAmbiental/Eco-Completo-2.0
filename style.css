@@ -62,7 +62,7 @@ a {
     }
 
     .box{
-        width: 60%;
+        width: 85%;
     }
 
     #navhead img {
@@ -282,8 +282,7 @@ body p {
         margin-left: 10px;
         text-align: center;
         margin-bottom: 20px;
-        width: 65%;
-        height:70%;
+        width: 85%;
     }
 
     .cards:hover {
@@ -423,6 +422,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
