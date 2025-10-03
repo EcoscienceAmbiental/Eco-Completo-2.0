@@ -41,14 +41,14 @@ a {
 }
 
 @media(max-width:1920px){
-    box{
-        height:350px;
-    }
+ .cards{
+     height:130%;
+ }
 }
 
 @media (max-width: 1024px) {
 
-    .box{
+    .cards{
         height:300px;
     }
 }
@@ -63,7 +63,6 @@ a {
 
     .box{
         width: 40%;
-        height:100px;
     }
 
     #navhead img {
@@ -75,7 +74,7 @@ a {
 }
 
 .cards{
-    height:200px;
+    height:100px;
 }
 
 #navheader {
@@ -427,6 +426,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
