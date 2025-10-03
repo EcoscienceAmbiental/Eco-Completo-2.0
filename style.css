@@ -41,13 +41,15 @@ a {
 }
 
 @media(max-width:1920px){
-    width:140%;
+    box{
+        height:135%
+    }
 }
 
 @media (max-width: 1024px) {
 
     .box{
-        width:125%;
+        height:125%;
     }
 }
 
@@ -60,7 +62,8 @@ a {
     }
 
     .box{
-        width: 35%;
+        width: 40%;
+        height:50%;
     }
 
     #navhead img {
@@ -295,6 +298,7 @@ body p {
 
     .box{
         width: 50%;
+        height: 70%
     }
 
     #intr2{
@@ -322,7 +326,8 @@ body p {
     }
 
     .box{
-        width: 30%
+        width: 30%;
+        height:45%;
     }
 }
 
@@ -422,6 +427,7 @@ body p {
     gap: 20px;
 
 }
+
 
 
 
