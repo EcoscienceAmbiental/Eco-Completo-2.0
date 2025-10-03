@@ -44,7 +44,7 @@ const questions = [
     {
         question: "Qual o tipo de fonte do seu carro?",
         options: [
-            { text: "Combustível", value: "combustível" },
+            { text: "Combustível fóssil", value: "combustível" },
             { text: "Biocombustível", value: "biocombustível" },
             { text: "Elétrico", value: "elétrico" },
             { text: "Híbrido", value: "híbrido" }
@@ -60,7 +60,7 @@ const questions = [
         ],
     },
     {
-        question: "Qual o seu tipo de dieta?",
+        question: "Qual a base da sua dieta?",
         options: [
             { text: "Vegana", value: "Vegana" },
             { text: "Vegetariana", value: "Vegetariana" },
@@ -79,10 +79,10 @@ const questions = [
     {
         question: "Qual o tipo de fonte elétrica para resfriamento em sua moradia?",
         options: [
-            { text: "Aquecimento elétrico", value: "eletrico" },
+            { text: "Resfriamento elétrico", value: "eletrico" },
             { text: "Gás natural", value: "gas" },
             { text: "Biomassa", value: "biomassa" },
-            { text: "Sem aquecimento", value: "semaquecimento" }
+            { text: "Sem resfriamento", value: "semaquecimento" }
         ],
     },
     {
@@ -334,4 +334,5 @@ function showResults() {
 },5000);
 
 }
+
 renderQuestion();
