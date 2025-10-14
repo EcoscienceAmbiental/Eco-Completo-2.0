@@ -43,6 +43,7 @@ a {
     .box img{
         height: 400px;
         width: 300px;
+        overflow: hidden;
     }
 }
 
@@ -50,6 +51,7 @@ a {
     .box img{
         height: 300px;
         width: 200px;
+        overflow: hidden;
     }
 }
 
@@ -425,6 +427,7 @@ body p {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 
 
 
