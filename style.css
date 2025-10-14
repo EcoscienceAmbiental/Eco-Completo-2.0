@@ -42,12 +42,14 @@ a {
 @media(max-width:1920px){
     .box img{
         height: 400px;
+        width: 300px;
     }
 }
 
 @media( max-width: 1024px){
     .box img{
         height: 300px;
+        width: 200px;
     }
 }
 
@@ -423,6 +425,7 @@ body p {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 
 
 
