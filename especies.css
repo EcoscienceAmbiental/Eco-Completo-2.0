@@ -73,6 +73,11 @@ a {
         max-height: 100%;
         height: 100%;
     }
+
+     .assuntitulo{
+        font-size:14px;
+    }
+    
 }
 main.conteudo-principal {
     max-width: 80%;
@@ -167,6 +172,10 @@ main.conteudo-principal {
         max-height: 100%;
         height: 100%;
     }
+
+    .assuntitulo{
+        font-size:14px;
+    }
 }
 
 
@@ -247,3 +256,4 @@ main.conteudo-principal {
     font-size: 14px;
 
   }
+
