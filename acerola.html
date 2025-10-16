@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoscience - Espécie: Acerola</title>
+    <!-- Carregando Tailwind CSS para estilização do conteúdo principal -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon-16x16.png" type="image/png">
+
+    <style>
+        /* CSS PERSONALIZADO (Integrado de polu.css e espe.css) */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: #dcdcdc; /* Cor de fundo adaptada do seu CSS */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            z-index: 100;
+            top: 0;
+            left: 0;
+            position: sticky;
+            width: 100%;
+            color: white;
+        }
+
+        #navhead {
+            align-items: center;
+            background-color: #005d6d;
+            padding: 10px 5px;
+            justify-content: space-evenly;
+            display: flex;
+            border-bottom: solid 2px #0097B2;
+            height: 55px;
+        }
+
+        a {
+            font-weight: 700;
+            font-size: 18px;
+            font-family: "Roboto Condensed", sans-serif;
+            color: #ffffff;
+            text-decoration: none;
+            transition: linear 0.1s;
+        }
+
+        .hd:hover {
+            border-bottom: solid 3px #fafafa;
+        }
+        
+        /* Estilos do Conteúdo Principal */
+        main.conteudo-principal {
+            max-width: 1100px;
+            padding: 20px;
+            background-color: #ffffffcc;
+            border-radius: 16px;
+            margin: 30px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.6s ease;
+            width: 95%; /* Garante boa visualização em telas menores */
+        }
+        
+        .secao h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+            color: #006b34;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .secao h2 {
+            font-size: 28px;
+            margin-top: 30px;
+            color: #007b3c;
+        }
+
+        /* Estilos específicos para o nome científico */
+        .scientific-name {
+            font-style: italic;
+            color: #059669; /* Verde Esmeralda para destaque */
+            font-size: 1.25rem; /* Mantém o tamanho grande */
+            display: block; /* Garante que ocupe a linha toda */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Fim dos estilos do Conteúdo Principal */
+
+        /* Estilos do Footer */
+        .novo-footer {
+            background-color: #00363f;
+            width: 100%; /* Ocupa a largura total */
+            margin-top: auto; /* Empurra para o final da página */
+            color: white;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #004853;
+        }
+        
+        .footer-col {
+            flex: 1 1 220px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #00b4cc;
+        }
+        
+        .footer-col a {
+            color: #f0f0f0;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: #0dffea;
+        }
+        
+        .footer-logo {
+            width: 160px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-btn {
+            background-color: #0d8aa0;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+            width: 100%;
+            max-width: 220px;
+        }
+        
+        .footer-btn:hover {
+            background-color: #2397ab;
+        }
+        
+        .footer-bottom {
+            background-color: #002d33;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+        /* Fim dos estilos do Footer */
+
+
+        /* Media Queries Adaptadas */
+        @media (max-width: 768px) {
+             #navhead {
+                flex-direction: column;
+                height: auto;
+                gap: 10px;
+                padding: 15px;
+            }
+
+            #navhead img {
+                width: 120px;
+            }
+
+            main.conteudo-principal {
+                padding: 15px;
+            }
+            
+            .secao h1 {
+                font-size: 28px;
+            }
+
+            .secao h2 {
+                font-size: 22px;
+            }
+            
+            /* Mostra apenas a logo e esconde os links na nav em mobile para economizar espaço */
+            #navhead a:not(:first-child) { 
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        // Mantendo a config do Tailwind para o estilo do conteúdo da planta
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#047857', /* Verde Escuro */
+                        'secondary': '#a7f3d0', /* Verde Claro */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- CABEÇALHO E NAVEGAÇÃO (Ecoscience) - ESTRUTURA ORIGINAL REPLICADA -->
+    <header>
+        <nav id="navheader">
+            <section id="navhead">
+                <a href="index.html"><img src="ecoscience69.png" alt="Logo Ecoscience" width="160"></a>
+                <!-- Links originais, sem marcação de página ativa -->
+                <a class="hd" href="calculadora.html">Calculadora de Carbono</a>
+                <a class="hd" href="cont.html">Coletor Ecológico</a>
+                <a class="hd" href="ecochat.html">EcoChat</a>
+            </section>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (Ficha Técnica da Planta) -->
+    <main class="conteudo-principal">
+        <section class="secao">
+            
+            <!-- TÍTULO DA PLANTA ADAPTADO AO NOVO ESTILO -->
+            <h1 class="mb-0">
+                Acerola
+            </h1>
+            <p class="scientific-name text-gray-700">
+                *Malpighia emarginata*
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm sm:text-base text-gray-600 mb-8">
+                <span class="p-1 px-3 bg-secondary rounded-full shadow-inner">Família: Malpighiaceae</span>
+                <span class="p-1 px-3 bg-secondary rounded-full shadow-inner">Origem: Antilhas e América Central</span>
+            </div>
+            
+            <!-- SEÇÃO DE IMAGEM E DESCRIÇÃO GERAL (Mantendo o layout Tailwind) -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                
+                <!-- Imagem Principal -->
+                <div class="lg:col-span-1">
+                    <!-- Placeholder para a Imagem Principal -->
+                    <img src="acerolaplanta.jpg" 
+                         alt="Imagem principal de [Nome Popular da Planta]"
+                         class="w-full h-auto object-cover rounded-xl shadow-lg transition duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    
+                    <!-- Galeria de Miniaturas (Opcional) -->
+                    <div class="flex gap-2 mt-4 overflow-x-auto p-2">
+                        <img src="floracerola.jpg" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-80">
+                        <img src="folhaacerola.png" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-80">
+                        <img src="acerolafruto.jpg" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-80">
+                    </div>
+                </div>
+                
+                <!-- Descrição Geral -->
+                <div class="lg:col-span-1">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b pb-2">Descrição da Espécie</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Arbusto ou pequena arvoreta frutífera, atingindo de 3 a 5 metros de altura. Possui copa densa e é uma planta perene. É cultivada extensivamente em pomares domésticos e comerciais.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        O fruto, a acerola, é uma pequena baga redonda, de cor que varia do laranja ao vermelho intenso quando maduro. É mundialmente famosa por ser uma das frutas mais ricas em Vitamina C (ácido ascórbico), sendo consumida principalmente na forma de sucos.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-2 text-primary">Informações Adicionais</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 pl-4">
+                        <li>Altura Média: 3 a 5 metros.</li>
+                        <li>Florescimento: Flores pequenas, rosadas ou vermelhas, que ocorrem em ciclos várias vezes ao ano em climas quentes. Frutifica logo após a floração.</li>
+                        <li>Toxicidade: Não, frutos são comestíveis.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- GUIA DE CULTIVO E CUIDADOS -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Guia de Cultivo</h2>
+                
+                <!-- Grade de Detalhes de Cultivo (3 Colunas no Desktop) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Cuidado 1: Luminosidade -->
+                    <div class="bg-secondary p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl text-primary mb-2">☀️ Luminosidade</h3>
+                        <p class="text-gray-700">Sol Pleno para alta produção de frutos.</p>
+                    </div>
+
+                    <!-- Cuidado 2: Rega -->
+                    <div class="bg-secondary p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl text-primary mb-2">💧 Rega</h3>
+                        <p class="text-gray-700">Regular e moderada. Não tolera seca prolongada.</p>
+                    </div>
+
+                    <!-- Cuidado 3: Solo -->
+                    <div class="bg-secondary p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl text-primary mb-2">⛰️ Solo Ideal</h3>
+                        <p class="text-gray-700">Fértil, com boa presença de matéria orgânica e excelente drenagem.</p>
+                    </div>
+
+                    <!-- Cuidado 4: Temperatura e Clima -->
+                    <div class="bg-secondary p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl text-primary mb-2">🌡️ Clima</h3>
+                        <p class="text-gray-700">Tropical e Subtropical. Não tolera frio intenso.</p>
+                    </div>
+
+                    <!-- Cuidado 5: Adubação -->
+                    <div class="bg-secondary p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl text-primary mb-2">🌿 Adubação</h3>
+                        <p class="text-gray-700">Essencial a adubação rica em potássio e fósforo (NPK 4-14-8) para a frutificação, aplicada a cada 3 meses na estação de crescimento.</p>
+                    </div>
+                    
+                    <!-- Cuidado 6: Propagação -->
+                    <div class="bg-secondary p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl text-primary mb-2">🌱 Propagação</h3>
+                        <p class="text-gray-700">Estacas ou enxertia (para manter as características da variedade).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO DE PROBLEMAS COMUNS (Opcional) -->
+            <section class="bg-red-50 p-6 rounded-xl border border-red-300">
+                 <h2 class="text-2xl font-bold text-red-700 mb-3">⚠️ Pragas e Doenças Comuns</h2>
+                 <p class="text-gray-700">
+                    A principal praga é a mosca-das-frutas. Também pode ser atacada por pulgões e cochonilhas.
+                 </p>
+            </section>
+        </section>
+    </main>
+
+    <!-- RODAPÉ (Ecoscience) - ESTRUTURA ORIGINAL REPLICADA -->
+    <footer class="novo-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="ecoscience69.png" alt="Logo Ecoscience" class="footer-logo">
+            </div>
+        
+            <div class="footer-col">
+                <h3>Explorar</h3>
+                <a href="polu.html">Poluição</a>
+                <a href="ener.html">Energias renováveis</a>
+            </div>
+        
+            <div class="footer-col">
+                <h3>Interaja</h3>
+                <a class="footer-btn" href="ecochat.html"> EcoChat</a>
+                <a class="footer-btn" href="calculadora.html">Calculadora de Carbono</a>
+            </div>
+        
+            <div class="footer-col">
+                <h3>Rede Sociais</h3>
+                <a class="footer-btn" href="https://www.instagram.com/ecoscienceambiental?igsh=OTU0YjVvY3ljMWJz" target="_blank">Instagram</a>
+                <a class="footer-btn" href="https://www.youtube.com/@EcoscienceAmbiental" target="_blank">YouTube</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ecoscience - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
